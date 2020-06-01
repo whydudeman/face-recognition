@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<form method="POST" enctype="multipart/form-data" th:action="@{/worker/upload/{id}(id=${worker.id})}">
+    <table>
+        <tr>
+            <td>File to upload:</td>
+            <td><input type="file" multiple="multiple" name="files"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Upload"/></td>
+        </tr>
+    </table>
+</form>
+<div class="row">
+
+    <div class="contact-form col-md-6 wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+        <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+            <h2>All <span class="color">Groups</span> </h2>
+            <div class="border"></div>
+        </div>
+        <table class="table h3">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Date</th>
+                <th scope="col">Short name</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="arrive : ${arrives}">
+                <th th:text="${arrive.id}" scope="row"></th>
+                <td th:text="${arrive.recognizeDate}"></td>
+                <td th:text="${arrive.worker.name}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

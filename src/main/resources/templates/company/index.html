@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Meghna One page parallax responsive HTML Template ">
+
+    <meta name="author" content="Muhammad Morshed">
+
+    <title>Toy Shop</title>
+
+    <!-- Mobile Specific Meta
+        ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/plugins/themefisher-font/style.css" th:href="@{/static/plugins/themefisher-font/style.css}">
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="/static/plugins/bootstrap/dist/css/bootstrap.min.css" th:href="@{/static/plugins/bootstrap/dist/css/bootstrap.min.css}">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="/static/plugins/animate-css/animate.css" th:href="@{/static/plugins/animate-css/animate.css}">
+    <!-- Magnific popup css -->
+    <link rel="stylesheet" href="/static/plugins/magnific-popup/dist/magnific-popup.css"  th:href="@{/static/plugins/magnific-popup/dist/magnific-popup.css}">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="/static/plugins/slick-carousel/slick/slick.css" th:href="@{/static/plugins/slick-carousel/slick/slick.css}">
+    <link rel="stylesheet" href="/static/plugins/slick-carousel/slick/slick-theme.css" th:href="@{/static/plugins/slick-carousel/slick/slick-theme.css}">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/static/css/style.css" th:href="@{/static/css/style.css}">
+
+
+</head>
+
+<body id="body" data-spy="scroll" data-target=".navbar" data-offset="50">
+<section class="hero-area overlay" style="background-image: url('/images/banner/hero-area.jpg');">
+    <div class="block">
+        <h1>Access Control Systems with Face-Recognition</h1>
+        <h2>Access Control Systems is set of technical means that protect a facility from unauthorized access of a person</h2>
+        <p>Analyze attendance of your Workers</p>
+        <a data-scroll href="#company" class="btn btn-transparent">Company</a>
+    </div>
+</section>
+
+<header id="navigation" class="navbar navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <!-- responsive nav button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- /responsive nav button -->
+
+            <!-- logo -->
+            <a class="navbar-brand logo" href="#body">
+                <!-- <img src="images/logo.png" alt="Website Logo" /> -->
+                <svg width="40px" height="40px" viewBox="0 0 45 44" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g id="Group" transform="translate(2.000000, 2.000000)" stroke="#57CBCC" stroke-width="3">
+                            <ellipse id="Oval" cx="20.5" cy="20" rx="20.5" ry="20"></ellipse>
+                            <path d="M6,7 L33.5,34.5" id="Line-2" stroke-linecap="square"></path>
+                            <path d="M21,20 L34,7" id="Line-3" stroke-linecap="square"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <!-- /logo -->
+        </div>
+
+        <!-- main nav -->
+        <nav class="collapse navbar-collapse navbar-right" role="Navigation">
+            <ul id="nav" class="nav navbar-nav navigation-menu">
+                <li><a th:href="@{/worker/all}">Workers</a></li>
+                <li><a th:href="@{/index/redirect}">This project</a></li>
+
+            </ul>
+        </nav>
+        <!-- /main nav -->
+
+    </div>
+</header>
+<section class="bg-one about section">
+    <div class="container">
+        <div class="row">
+
+            <!-- section title -->
+            <div class="title text-center wow fadeIn" data-wow-duration="1500ms" >
+                <h2>Company <span class="color" th:text="${company.name}"></span> </h2>
+                <div class="border"></div>
+            </div>
+            <!-- /section title -->
+
+            <!-- About item -->
+            <div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" >
+                <div class="block">
+                    <div class="icon-box">
+                        <i class="tf-tools"></i>
+                    </div>
+                    <!-- Express About Yourself -->
+                    <div class="content text-center">
+                        <h3 class="ddd">Number Of Workers</h3>
+                        <p th:text="${company.getWorkers().size()}"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- End About item -->
+
+            <!-- About item -->
+            <div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="250ms">
+                <div class="block">
+                    <div class="icon-box">
+                        <i class="tf-strategy"></i>
+                    </div>
+                    <!-- Express About Yourself -->
+                    <div class="content text-center">
+                        <h3>Currently at Work</h3>
+                        <p th:text="${currentAtWork}"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- End About item -->
+
+            <!-- About item -->
+            <div class="col-md-4 text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="500ms">
+                <div class="block kill-margin-bottom">
+                    <div class="icon-box">
+                        <i class="tf-anchor2"></i>
+                    </div>
+                    <!-- Express About Yourself -->
+                    <div class="content text-center">
+                        <h3>Number of Late comers</h3>
+                        <p th:text="${lateComings}"></p>
+                    </div>
+                </div>
+            </div>
+            <!-- End About item -->
+
+        </div> 		<!-- End row -->
+    </div>   	<!-- End container -->
+</section>   <!-- End section -->
+
+
+<!-- Main jQuery -->
+
+<script type="text/javascript" src="../static/plugins/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap 3.1 -->
+<script type="text/javascript" src="../static/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Smooth Scroll -->
+<script type="text/javascript" src="../static/plugins/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+<!-- Magnific popup -->
+<script type="text/javascript" src="../static/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+<!-- Number Counter Script -->
+<script type="text/javascript" src="../static/plugins/count-to/jquery.countTo.js"></script>
+<!-- wow.min Script -->
+<script type="text/javascript" src="../static/plugins/wow/dist/wow.min.js"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="../static/js/script.js"></script>
+
+</body>
+</html>

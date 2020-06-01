@@ -1,0 +1,21 @@
+server:
+  port: 8083
+  compression.enabled: true
+  compression.mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json
+  compression.min-response-size: 2048
+
+spring:
+  jpa.hibernate.ddl-auto: update
+  jpa.hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://localhost:3306/face_recognition?useUnicode=yes&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password:
+    initialization-mode: never
+logging:
+  file: logs/loggings.log
+file.upload:
+  profileImage: /home/nurbol/DiplomProject/faceCrack/face-prod/data/
+
